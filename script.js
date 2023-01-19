@@ -34,6 +34,11 @@ for (let i = 0; i < worktime.length; i++) {
     $timeblock.append($textarea)
     // save button
     var $saveBtn = $("<button class='saveBtn'></button>")
+    // add event listener to button
+    $("saveBtn").on("click", function(){
+        let userInput = $("textarea").val();
+        localStorage.setItem(hourText, userInput);
+    });
 
     // change color of timeblock based on current day
     if (moment().hour() < worktime[i]) {
