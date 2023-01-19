@@ -5,9 +5,9 @@
 const today = moment().format("dddd, MMMM Do");
 $('#currentDay').text(today); 
 
-const punchIn = 0;
-const punchOut = 24;
-var currentHour = moment().hour();
+// work start end hour (can change to debug)
+const punchIn = 4;
+const punchOut = 20;
 
 function createArr(min, max) {
     let array = [];
@@ -34,15 +34,16 @@ for (let i = 0; i < worktime.length; i++) {
     var $saveBtn = $("<button class='saveBtn'></button>")
 
     // change color of timeblock based on current day
-    if (currentHour < worktime[i]) {
-        // the past
-        $timeblock.addClass('past');
-    } else if (currentHour = worktime[i]) {
-        // the present
+    if (moment().hour() < worktime[i]) {
+        // the future is gree
+        $timeblock.addClass('future');
+
+    } else if (moment().hour() === worktime[i]) {
+        // the present is red
         $timeblock.addClass('present');
     } else {
-        // the future
-        $timeblock.addClass('future');
+        // the past is gray
+        $timeblock.addClass('past');
     };
 
 
