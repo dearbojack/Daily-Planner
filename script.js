@@ -30,6 +30,8 @@ for (let i = 0; i < worktime.length; i++) {
     $hourDiv.text(hourText);
     // time block with text are in it
     var $timeblock = $("<div class='time-block'></div>");
+    var $textarea = $("<textarea></textarea>");
+    $timeblock.append($textarea)
     // save button
     var $saveBtn = $("<button class='saveBtn'></button>")
 
