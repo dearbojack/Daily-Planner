@@ -28,6 +28,8 @@ textarea {
 .time-block {
   text-align: center;
   border-radius: 15px;
+  width: 400px; 
+  /* debug */
 }
 
 .row {
@@ -37,7 +39,8 @@ textarea {
 }
 
 .hour {
-  background-color: #ffffff;
+  background-color: #db1919; 
+  /*debug*/
   color: #000000;
   border-top: 1px dashed #000000;
 }
