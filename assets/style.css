@@ -27,22 +27,24 @@ textarea {
 
 .time-block {
   text-align: center;
-  border-radius: 15px;
-  width: 400px; 
-  /* debug */
+  /* border-radius: 15px; */
 }
 
 .row {
   white-space: pre-wrap;
   height: 80px;
   border-top: 1px solid white;
+  padding-bottom: 5px;
 }
 
 .hour {
-  background-color: #db1919; 
-  /*debug*/
+  background-color: #ffffff; 
+  border-right: 1px solid black;
   color: #000000;
   border-top: 1px dashed #000000;
+  border-bottom: 1px dashed #000000;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
 }
 
 .past {
