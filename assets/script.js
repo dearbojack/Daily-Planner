@@ -37,11 +37,6 @@ for (let i = 0; i < worktime.length; i++) {
     $timeblock.append($textarea)
     // save button
     var $saveBtn = $("<button class='saveBtn'></button>")
-    // add event listener to button
-    $("saveBtn").on("click", function(){
-        let userInput = $("textarea").val();
-        localStorage.setItem(hourText, userInput);
-    });
 
     // change color of timeblock based on current day
     if (moment().hour() < worktime[i]) {
@@ -55,7 +50,11 @@ for (let i = 0; i < worktime.length; i++) {
         // the past is gray
         $timeblock.addClass('past');
     };
-
+        // add event listener to button
+    $(".saveBtn").on("click", function(){
+        let userInput = $("textarea").val();
+        localStorage.setItem(hourText, userInput);
+    });
     // using Bootstrap to stylize the col
     $hourDiv.addClass('col-1');
     $timeblock.addClass('col-10');
@@ -64,4 +63,11 @@ for (let i = 0; i < worktime.length; i++) {
     // append to hour row
     $rowDiv.append($hourDiv, $timeblock, $saveBtn);
     $('.container').append($rowDiv);
+
+    // add event listener to button
+    $(".saveBtn").on("click", function(){
+        let userInput = $("textarea").val();
+        localStorage.setItem(hourText, userInput);
+    });
 };
+
