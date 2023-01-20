@@ -33,7 +33,7 @@ for (let i = 0; i < worktime.length; i++) {
 
     // time block with text are in it
     var $timeblock = $("<div class='time-block'></div>");
-    var $textarea = $("<textarea></textarea>");
+    var $textarea = $("<textarea class='w-100'></textarea>");
     $timeblock.append($textarea)
     // save button
     var $saveBtn = $("<button class='saveBtn'></button>")

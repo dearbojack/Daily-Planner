@@ -9,7 +9,7 @@ textarea {
   border: none;
   resize: none;
   color: #000000;
-  border-left: 1px solid black;
+  /* border-left: 1px solid black; */
   padding: 10px;
 }
 
@@ -45,6 +45,8 @@ textarea {
   border-bottom: 1px dashed #000000;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
+  text-align: right;
+  vertical-align: middle;
 }
 
 .past {
