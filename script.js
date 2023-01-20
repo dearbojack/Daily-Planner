@@ -28,6 +28,9 @@ for (let i = 0; i < worktime.length; i++) {
     var hourText = moment().hour(worktime[i]).format('hh A');
     // set hour text of hour cell
     $hourDiv.text(hourText);
+
+
+
     // time block with text are in it
     var $timeblock = $("<div class='time-block'></div>");
     var $textarea = $("<textarea></textarea>");
@@ -42,7 +45,7 @@ for (let i = 0; i < worktime.length; i++) {
 
     // change color of timeblock based on current day
     if (moment().hour() < worktime[i]) {
-        // the future is gree
+        // the future is green
         $timeblock.addClass('future');
 
     } else if (moment().hour() === worktime[i]) {
@@ -53,6 +56,10 @@ for (let i = 0; i < worktime.length; i++) {
         $timeblock.addClass('past');
     };
 
+    // using Bootstrap to stylize the col
+    $hourDiv.addClass('col-1');
+    $timeblock.addClass('col-10');
+    $saveBtn.addClass('col-1');
 
     // append to hour row
     $rowDiv.append($hourDiv, $timeblock, $saveBtn);
