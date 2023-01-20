@@ -63,11 +63,7 @@ for (let i = 0; i < worktime.length; i++) {
     // append to hour row
     $rowDiv.append($hourDiv, $timeblock, $saveBtn);
     $('.container').append($rowDiv);
-
-    // add event listener to button
-    $(".saveBtn").on("click", function(){
-        let userInput = $("textarea").val();
-        localStorage.setItem(hourText, userInput);
-    });
 };
 
+// TODO debug saveBtn eventListener
+// TODO data persistent on reload (load data from localStorage)
