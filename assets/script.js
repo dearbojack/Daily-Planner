@@ -52,5 +52,15 @@ $(".saveBtn").on("click", function() {
     console.log(hourKey);
     // store key value in localStorage
     localStorage.setItem(hourKey, textAreaValue);
+});
+
+// load data from localStorage
+// set description of each row to text area value in localStorage
+$(".description").each(function () {
+    // get hourKey of current row
+    var hourKey = $(this).prev().text(); // here $(this) is the description
+    // get textArea value in localStorage
+    var description = localStorage.getItem(hourKey);
+    // set description to saved textAreaValue
+    $(this).val(description);
 })
-// TODO data persistent on reload (load data from localStorage)
