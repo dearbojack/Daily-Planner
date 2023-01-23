@@ -40,14 +40,17 @@ for (var i = punchIn; i <= punchOut; i++) {
         // the past is gray
         textArea.addClass('past');
     };
-    
-    // add event listener to button
-    $(".saveBtn").on("click", function(){
-        let userInput = $("textarea").val();
-        localStorage.setItem(hourText, userInput);
-    });
-
 };
 
-// TODO debug saveBtn eventListener
+// saveBtn eventListener
+$(".saveBtn").on("click", function() {
+    // get text area text value
+    var textAreaValue = $(this).prev().val();
+    // get hour col key value
+    var hourKey = $(this).prev().prev().text();
+    console.log(textAreaValue);
+    console.log(hourKey);
+    // store key value in localStorage
+    localStorage.setItem(hourKey, textAreaValue);
+})
 // TODO data persistent on reload (load data from localStorage)
