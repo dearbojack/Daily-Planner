@@ -21,7 +21,7 @@ for (var i = punchIn; i <= punchOut; i++) {
     // create save button and add class
     var saveBtn = $("<button>").addClass("col-1 saveBtn");
     // create save button img
-    var $saveBtnImg = $("<img src='assets/img/save.png'> alt='save' class='save-img'");
+    var $saveBtnImg = $("<img src='assets/img/save.png' alt='save' class='save-img'>");
     // add save btn img to button
     saveBtn.append($saveBtnImg);
     // append all to the row
