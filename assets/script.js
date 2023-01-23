@@ -6,26 +6,17 @@ const today = moment().format("dddd, MMMM Do");
 $('#currentDay').text(today); 
 
 // work start end hour (can change to debug)
-const punchIn = 4;
-const punchOut = 20;
+var currentHour = moment().hour();
+const punchIn = 9;
+const punchOut = 24;
 
-function createArr(min, max) {
-    let array = [];
-    for (let i = min; i <= max; i++) {
-        array.push(i);
-    }
-    return array;
-};
-
-var worktime = createArr(punchIn, punchOut);
-
-for (let i = 0; i < worktime.length; i++) {
+for (var i = punchIn; i <= punchOut; i++) {
     // hour row
     var $rowDiv = $("<div class='row'></div>");
     // hour cell
     var $hourDiv = $("<div class='hour'></div>");
     // hour text
-    var hourText = moment().hour(worktime[i]).format('hh A');
+    var hourText = moment().hour(i).format('hh A');
     // set hour text of hour cell
     $hourDiv.text(hourText);
 
@@ -39,18 +30,19 @@ for (let i = 0; i < worktime.length; i++) {
     var $saveBtn = $("<button class='saveBtn'></button>")
 
     // change color of timeblock based on current day
-    if (moment().hour() < worktime[i]) {
+    if (i > currentHour) {
         // the future is green
         $timeblock.addClass('future');
 
-    } else if (moment().hour() === worktime[i]) {
+    } else if (i === currentHour) {
         // the present is red
         $timeblock.addClass('present');
     } else {
         // the past is gray
         $timeblock.addClass('past');
     };
-        // add event listener to button
+    
+    // add event listener to button
     $(".saveBtn").on("click", function(){
         let userInput = $("textarea").val();
         localStorage.setItem(hourText, userInput);
