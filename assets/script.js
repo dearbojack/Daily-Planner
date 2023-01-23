@@ -11,35 +11,34 @@ const punchIn = 9;
 const punchOut = 24;
 
 for (var i = punchIn; i <= punchOut; i++) {
-    // hour row
-    var $rowDiv = $("<div class='row'></div>");
-    // hour cell
-    var $hourDiv = $("<div class='hour'></div>");
-    // hour text
+    // create the row and add class
+    var row = $("<div>").addClass("row time-block");
+    // create hour col and add class
     var hourText = moment().hour(i).format('hh A');
-    // set hour text of hour cell
-    $hourDiv.text(hourText);
-
-
-
-    // time block with text are in it
-    var $timeblock = $("<div class='time-block'></div>");
-    var $textarea = $("<textarea class='w-100'></textarea>");
-    $timeblock.append($textarea)
-    // save button
-    var $saveBtn = $("<button class='saveBtn'></button>")
+    var hourCol = $("<div>").addClass("col-1 hour").text(hourText);
+    // create text area and add class
+    var textArea = $("<textarea>").addClass("col-10 description");
+    // create save button and add class
+    var saveBtn = $("<button>").addClass("col-1 saveBtn");
+    // create save button img
+    var $saveBtnImg = $("<img src='assets/img/save.png'> alt='save' class='save-img'");
+    // add save btn img to button
+    saveBtn.append($saveBtnImg);
+    // append all to the row
+    row.append(hourCol, textArea, saveBtn);
+    // append row to container
+    $(".container").append(row);
 
     // change color of timeblock based on current day
     if (i > currentHour) {
         // the future is green
-        $timeblock.addClass('future');
-
+        textArea.addClass('future');
     } else if (i === currentHour) {
         // the present is red
-        $timeblock.addClass('present');
+        textArea.addClass('present');
     } else {
         // the past is gray
-        $timeblock.addClass('past');
+        textArea.addClass('past');
     };
     
     // add event listener to button
@@ -47,14 +46,7 @@ for (var i = punchIn; i <= punchOut; i++) {
         let userInput = $("textarea").val();
         localStorage.setItem(hourText, userInput);
     });
-    // using Bootstrap to stylize the col
-    $hourDiv.addClass('col-1');
-    $timeblock.addClass('col-10');
-    $saveBtn.addClass('col-1');
 
-    // append to hour row
-    $rowDiv.append($hourDiv, $timeblock, $saveBtn);
-    $('.container').append($rowDiv);
 };
 
 // TODO debug saveBtn eventListener
