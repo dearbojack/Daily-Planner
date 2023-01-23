@@ -7,8 +7,8 @@ $('#currentDay').text(today);
 
 // work start end hour (can change to debug)
 var currentHour = moment().hour();
-const punchIn = 17;
-const punchOut = 24;
+const punchIn = 9;
+const punchOut = 17;
 
 for (var i = punchIn; i <= punchOut; i++) {
     // create the row and add class
