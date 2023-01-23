@@ -51,17 +51,18 @@ textarea {
 
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: rgb(122, 117, 117);
 }
 
 .present {
   background-color: #ff6961;
-  color: white;
+  font-size: 2em;
+  color: rgb(35, 33, 33);
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
+  color: rgb(15, 9, 9);
 }
 
 .saveBtn {
