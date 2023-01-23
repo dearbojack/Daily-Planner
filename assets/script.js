@@ -7,7 +7,7 @@ $('#currentDay').text(today);
 
 // work start end hour (can change to debug)
 var currentHour = moment().hour();
-const punchIn = 9;
+const punchIn = 17;
 const punchOut = 24;
 
 for (var i = punchIn; i <= punchOut; i++) {
