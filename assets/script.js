@@ -7,10 +7,10 @@ $('#currentDay').text(today);
 
 // work start end hour (can change to debug)
 var currentHour = moment().hour();
-const punchIn = 9;
-const punchOut = 17;
+var punchIn = 9;
+var punchOut = 17;
 
-for (var i = punchIn; i <= punchOut; i++) {
+for (var i = punchIn; i < punchOut; i++) {
     // create the row and add class
     var row = $("<div>").addClass("row time-block");
     // create hour col and add class
